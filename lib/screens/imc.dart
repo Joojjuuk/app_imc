@@ -1,5 +1,7 @@
+import 'package:app_imc/screens/results.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:app_imc/logic/imc_calculation.dart';
 
 class IMC extends StatelessWidget {
   IMC({super.key});
@@ -58,15 +60,14 @@ class IMC extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
               child: TextField(
                 controller: pesoController,
-                keyboardType:
-                    TextInputType.numberWithOptions(decimal: true),
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
                 ],
                 decoration: InputDecoration(
                     labelText: "Peso em KGs",
-                    labelStyle: TextStyle(
-                        fontWeight: FontWeight.w700, fontSize: 20),
+                    labelStyle:
+                        TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                     hintText: "60",
                     hintStyle: TextStyle(
                       color: Color(0xCC000000),
@@ -79,17 +80,31 @@ class IMC extends StatelessWidget {
                       fontSize: 20,
                       color: Color(0xCC000000),
                     )),
-              )
-          ),
+              )),
           Padding(
-            padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
-            child:ElevatedButton(
-              onPressed: () {
-                final altura = double.tryParse(alturaController.text);
-                final peso = double.tryParse(pesoController.text); },
-              child: Text("Calcular IMC"),
-            )
-            ),
+              padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
+              child: ElevatedButton(
+                  onPressed: () {
+                    final altura = double.tryParse(alturaController.text);
+                    final peso = double.tryParse(pesoController.text);
+
+                    if (altura != null && peso != null && altura > 0) {
+                      final imc = peso / (altura * altura);
+                      final resultado = classificarIMC(imc);
+                      print("IMC: ${imc.toStringAsFixed(2)} - $resultado");
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Results(imc: imc),
+                        ),
+                      );
+                    } else {
+                      print("Valores inválidos");
+                    }
+                  },
+                child: Text("Calcular IMC"),
+              )),
         ]),
       ),
     ));
