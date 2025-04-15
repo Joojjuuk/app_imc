@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_imc/screens/imc.dart';
 
 class Splashscreen extends StatelessWidget {
   const Splashscreen({super.key});
@@ -46,7 +47,9 @@ class Splashscreen extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               padding: EdgeInsets.fromLTRB(70, 7, 70, 7),
             ),
-              onPressed: () {},
+              onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => IMC()));
+              },
               child: Text('Comecar agora', style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontSize: 25,
