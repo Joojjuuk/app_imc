@@ -11,22 +11,31 @@ class Results extends StatelessWidget {
   Widget build(BuildContext context) {
     String classificacao = classificarIMC(imc);
     String Descricaoclas;
+    String image;
     if (classificacao == "Magreza grave") {
       Descricaoclas = "Você está com magreza grave. Procure um médico.";
+      image = 'assets/cartoons/GraveMagro.png';
     } else if (classificacao == "Magreza moderada") {
       Descricaoclas = "Você está com magreza moderada. Procure um médico.";
+      image = 'assets/cartoons/Magro.png';
     } else if (classificacao == "Magreza leve") {
       Descricaoclas = "Você está com magreza leve. Procure um médico.";
+      image = 'assets/cartoons/Magro.png';
     } else if (classificacao == "Saudável") {
       Descricaoclas = "Parabéns! Seu peso está saudável.";
+      image = 'assets/cartoons/Saudavel.png';
     } else if (classificacao == "Sobrepeso") {
       Descricaoclas = "Você está com sobrepeso. Procure um médico.";
+      image = 'assets/cartoons/Obesidade.png';
     } else if (classificacao == "Obesidade Grau 1") {
       Descricaoclas = "Você está com obesidade grau 1. Procure um médico.";
+      image = 'assets/cartoons/Obesidade.png';
     } else if (classificacao == "Obesidade Grau 2") {
       Descricaoclas = "Você está com obesidade grau 2. Procure um médico.";
+      image = 'assets/cartoons/ObesidadeGrave.png';
     } else {
       Descricaoclas = "Você está com obesidade grau 3. Procure um médico.";
+      image = 'assets/cartoons/ObesidadeGrave.png';
     }
     return Scaffold(
       backgroundColor: Colors.black,
@@ -64,8 +73,7 @@ class Results extends StatelessWidget {
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.bold,
                   )),
-              Image.asset(
-                'assets/cartoons/Obesidade.png',
+              Image.asset(image,
                 scale: 2,
               ),
               Text('Seu imc é: $imc',
