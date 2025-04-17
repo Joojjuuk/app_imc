@@ -27,7 +27,6 @@ class Results extends StatelessWidget {
               )
             ],
           ),
-
         ),
       ),
     );

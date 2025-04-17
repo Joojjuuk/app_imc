@@ -17,3 +17,9 @@ String classificarIMC(double imc) {
     return "Obesidade Grau 3";
   }
 }
+
+class IMCCalculo {
+  double calcularIMC(double altura, double peso) {
+    return peso / (altura * altura);
+  }
+}

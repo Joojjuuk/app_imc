@@ -52,6 +52,7 @@ class Splashscreen extends StatelessWidget {
               },
               child: Text('Comecar agora', style: TextStyle(
                 fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
                 fontSize: 25,
                 color: Colors.black
               ),)
