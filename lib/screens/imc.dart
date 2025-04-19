@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:app_imc/logic/imc_calculation.dart';
 
 
-
 class IMC extends StatefulWidget {
   const IMC({super.key});
 
@@ -147,7 +146,7 @@ final TextEditingController pesoController = TextEditingController();
                   ),
                 ),
                 Image.asset('assets/backgrounds/FundoEstilo.jpg'),
-                SizedBox(height: 30),
+                SizedBox(height: 25),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFFFCE00),
@@ -168,7 +167,7 @@ final TextEditingController pesoController = TextEditingController();
                       'Calcular IMC',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 20,
                         color: Colors.black,
                       ),
                     )),
