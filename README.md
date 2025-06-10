@@ -31,5 +31,3 @@ A interface foi projetada para ser visualmente atraente, com animações suaves 
 Este app é ideal para quem deseja monitorar seu IMC de maneira **divertida e interativa**, com uma interface que mistura **funcionalidade** e uma abordagem visual **lúdica**.
 
 ---
-
-Se precisar de mais detalhes ou ajustes, estou à disposição!
