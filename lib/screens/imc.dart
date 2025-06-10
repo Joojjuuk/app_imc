@@ -50,7 +50,7 @@ final TextEditingController pesoController = TextEditingController();
                   height: 20,
                 ),
                 Text(
-                  'Vamos Comecar?',
+                  'Vamos Começar?',
                   style: TextStyle(
                     fontSize: 38,
                     fontFamily: 'Montserrat',
