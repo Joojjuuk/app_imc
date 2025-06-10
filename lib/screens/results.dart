@@ -152,7 +152,7 @@ class _ResultsState extends State<Results> {
                     'Salvar Resultado',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 22,
                       color: Colors.black,
                     ),
                   ),
